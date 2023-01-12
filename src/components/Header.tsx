@@ -1,13 +1,21 @@
 import Link from "next/link";
 import Image from "next/image";
+import dynamic from "next/dynamic";
+// import { useNetwork } from "wagmi";
 
 import DownloadIcom from "../assets/icons/download.svg";
-// import ArrowIcon from "../assets/icons/connect-arrow.svg";
 import WalletIcon from "../assets/icons/wallet.svg";
 import MenuIcon from "../assets/icons/menu.svg";
 import bscLogo from "../assets/images/bsc-logo.png";
 
+const ConnectWallet = dynamic(() => import("./ConnectWallet"), {
+  ssr: false,
+});
+
 const Header = () => {
+  // const { chain } = useNetwork();
+
+  // console.log({ chain });
   return (
     <header className="text-sm flex justify-between items-center pb-8">
       <div>
@@ -31,20 +39,15 @@ const Header = () => {
           <span className="font-bold ml-2">BSC Mainnet</span>
         </Link>
 
-        <Link href="#" className="py-2 px-6 border-blue_02 border rounded-lg">
-          <span>3FZbgi29.........V8eyH</span>
-        </Link>
-        {/* <Link
-            href="#"
-            className="py-3 px-6 border-blue_02 border rounded-lg bg-blue_01 flex items-center"
-          >
-            <span className="text-white font-bold">Connect Wallet</span>
-            <ArrowIcon className="h-2 w-2 ml-4" />
-          </Link> */}
+        <ConnectWallet />
       </div>
 
       <div className="flex md:hidden items-center">
-        <button className="p-1 border border-grey_05 rounded-lg bg-blue_03 mr-4">
+        <button
+          className="p-1 border border-grey_05 rounded-lg bg-blue_03 mr-4"
+          // onClick={onOpen}
+          // disabled={loading}
+        >
           <WalletIcon className="h-5 w-5" />
         </button>
         <button>
