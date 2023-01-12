@@ -1,10 +1,9 @@
-import { useWeb3Modal } from "@web3modal/react";
-import { useAccount, useDisconnect } from "wagmi";
 import { Tooltip } from "react-tooltip";
+import { useConnectWallet } from "../custom-hooks/wallet";
 import "react-tooltip/dist/react-tooltip.css";
 
 import ArrowIcon from "../assets/icons/connect-arrow.svg";
-import { useState } from "react";
+import WalletIcon from "../assets/icons/wallet.svg";
 
 const shortAddress = (address: string) => {
   return address
@@ -15,16 +14,8 @@ const shortAddress = (address: string) => {
 };
 
 const ConnectWallet = () => {
-  const [loading, setLoading] = useState(false);
-  const { open } = useWeb3Modal();
-  const { disconnect } = useDisconnect();
-  const { address, isConnected } = useAccount();
-
-  async function onOpen() {
-    setLoading(true);
-    await open({ route: "SelectNetwork" });
-    setLoading(false);
-  }
+  const { onOpen, loading, disconnect, address, isConnected } =
+    useConnectWallet();
 
   return (
     <>
