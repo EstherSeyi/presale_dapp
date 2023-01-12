@@ -1,0 +1,44 @@
+.stepper-row {
+  display: flex;
+  gap: 36px;
+  align-items: flex-start;
+
+  .dot-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    &::after {
+      content: "";
+      height: 40px;
+      border-width: 1px;
+      @apply border-green_01;
+    }
+
+    .dot {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      @apply bg-blue_01;
+    }
+    .shade {
+      background-color: rgba(0, 119, 254, 0.25);
+      position: absolute;
+      left: -5px;
+      top: -5px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+  }
+
+  .label {
+  }
+
+  &:last-of-type {
+    .dot-container::after {
+      display: none;
+    }
+  }
+}
