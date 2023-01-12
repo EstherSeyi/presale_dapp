@@ -2,8 +2,7 @@ import { Tooltip } from "react-tooltip";
 import { useConnectWallet } from "../custom-hooks/wallet";
 import "react-tooltip/dist/react-tooltip.css";
 
-import ArrowIcon from "../assets/icons/connect-arrow.svg";
-import WalletIcon from "../assets/icons/wallet.svg";
+import ArrowIcon from "../../public/assets/icons/connect-arrow.svg";
 
 const shortAddress = (address: string) => {
   return address

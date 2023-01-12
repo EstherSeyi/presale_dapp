@@ -1,6 +1,6 @@
 import { useConnectWallet } from "../custom-hooks/wallet";
 
-import WalletIcon from "../assets/icons/wallet.svg";
+import WalletIcon from "../../public/assets/icons/wallet.svg";
 
 const SSConnectWallet = () => {
   const { onOpen, loading, disconnect, address, isConnected } =

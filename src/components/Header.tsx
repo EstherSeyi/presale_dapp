@@ -1,8 +1,8 @@
 import Link from "next/link";
 import dynamic from "next/dynamic";
 
-import DownloadIcom from "../assets/icons/download.svg";
-import MenuIcon from "../assets/icons/menu.svg";
+import DownloadIcom from "../../public/assets/icons/download.svg";
+import MenuIcon from "../../public/assets/icons/menu.svg";
 
 const ChainName = dynamic(() => import("./ChainName"), {
   ssr: false,
