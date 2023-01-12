@@ -1,10 +1,12 @@
 import type { AppProps } from "next/app";
+import { Toaster } from "react-hot-toast";
 
 import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
 
 import { dmsans, spacegrotesk } from "../styles/fonts";
 import "../styles/globals.css";
+import "../styles/timeline.scss";
 
 import {
   EthereumClient,
@@ -50,6 +52,7 @@ export default function App({ Component, pageProps }: AppProps) {
           </section>
           <Footer />
         </main>
+        <Toaster />
         <Web3Modal
           projectId={process.env.NEXT_PUBLIC_PROJECT_ID}
           ethereumClient={ethereumClient}
