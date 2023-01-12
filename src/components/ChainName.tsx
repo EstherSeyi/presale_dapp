@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useNetwork } from "wagmi";
 
-import bscLogo from "../../public/assets/images/bsc-logo.png";
+import bscLogo from "../../public/bsc-logo.png";
 
 const ChainName = () => {
   const { chain } = useNetwork();
